@@ -157,7 +157,7 @@ fu.get("/part", function (req, res) {
 });
 
 fu.get("/recv", function (req, res) {
-  if (!req.uri.params.since) {
+  if (!since in req.uri.params) {
     res.simpleJSON(400, { error: "Must supply since parameter" });
     return;
   }
